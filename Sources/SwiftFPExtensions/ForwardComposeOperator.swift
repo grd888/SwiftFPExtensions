@@ -11,6 +11,9 @@ precedencegroup ForwardComposition {
     associativity: left
     higherThan : ForwardApplication
 }
+
+infix operator >>>: ForwardComposition
+
 /// The ForwardCompose operator  >>>
 ///
 /// Combines two functions into a single function by chaining their outputs.
@@ -32,8 +35,6 @@ precedencegroup ForwardComposition {
 ///   let doubleToString = double >>> toString
 ///   print(doubleToString(4)) // Prints "8"
 ///   ```
-infix operator >>>: ForwardComposition
-
 public func >>> <A, B, C>(
     f: @escaping (A) -> B, g: @escaping (B) -> C
 ) -> (A) -> C {

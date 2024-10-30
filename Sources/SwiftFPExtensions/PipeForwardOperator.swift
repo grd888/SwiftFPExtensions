@@ -1,6 +1,7 @@
 precedencegroup ForwardApplication {
     associativity: left
 }
+infix operator |>: ForwardApplication
 
 /// The PipeForward operator |>
 ///
@@ -25,11 +26,6 @@ precedencegroup ForwardApplication {
 ///
 /// # Discussion
 /// This operator is commonly used for creating a fluent syntax when applying multiple transformations to a value in sequence.
-infix operator |>: ForwardApplication
-
 public func |> <T, U>(a: T, f: (T) -> U) -> U {
     return f(a)
 }
-
-
-

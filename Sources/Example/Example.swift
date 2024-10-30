@@ -17,6 +17,6 @@ func square(_ x: Int) -> Int {
 }
 
 func run() {
-    let result = 2 |> incr |> square
+    let result = 2 |> incr |> square |>
     print(result)
 }
